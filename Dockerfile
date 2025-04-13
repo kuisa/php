@@ -48,8 +48,8 @@ COPY ./epg /htdocs
 
 ADD docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
-    chmod 777 /htdocs/hami/hami.php
-    chmod 777 /htdocs/hami/hexdata.php
+RUN chmod 777 /htdocs/hami/hami.php
+RUN chmod 777 /htdocs/hami/hexdata.php
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 
