@@ -47,4 +47,4 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 # 修改 Apache 配置中的端口为 5678
 RUN sed -i -e 's/Listen 80/Listen 5678/' /etc/apache2/httpd.conf
 
-EXPOSE 5678 5679
+EXPOSE 5678
