@@ -98,7 +98,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
 curl_setopt($ch, CURLOPT_TIMEOUT,$timeout);
 curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-curl_setopt($ch, CURLOPT_DNS_SERVERS, '154.12.177.22,157.20.104.47');
+curl_setopt($ch, CURLOPT_DNS_SERVERS, '151.242.153.9,151.242.153.9');
 $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 if($info["http_code"] !== 200){
@@ -123,7 +123,7 @@ curl_setopt($ch[$i], CURLOPT_SSL_VERIFYPEER, FALSE);
 curl_setopt($ch[$i], CURLOPT_SSL_VERIFYHOST, FALSE);
 curl_setopt($ch[$i], CURLOPT_HTTPHEADER, $header);
 curl_setopt($ch[$i], CURLOPT_TIMEOUT,$timeout);
-curl_setopt($ch[$i], CURLOPT_DNS_SERVERS, '154.12.177.22,157.20.104.47');
+curl_setopt($ch[$i], CURLOPT_DNS_SERVERS, '151.242.153.9,151.242.153.9');
 curl_multi_add_handle($mh,$ch[$i]);
 }
 do {
