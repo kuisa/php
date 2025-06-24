@@ -55,13 +55,10 @@ $pros = array("http:"=>"80","https"=>"443");
 curl_setopt($ch, CURLOPT_RESOLVE,array("-{$host}:{$pros[$pro]}","{$host}:{$pros[$pro]}:151.242.153.9"));
 $data = curl_exec($ch);
 $info = curl_getinfo($ch);
+if($info["http_code"] !== 200 or empty($data)){
+$data = curl_exec($ch);
+}
 curl_close($ch);
-if($info["http_code"] == 200){
 print_r($data);
 exit;
-}
-if($info["http_code"] == 302){
-print_r($info["redirect_url"]);
-exit;
-}
 ?>
