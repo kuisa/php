@@ -46,16 +46,13 @@ curl_setopt($ch, CURLOPT_ENCODING,'gzip');
 if(!empty($timeout)){
 curl_setopt($ch, CURLOPT_TIMEOUT,$timeout);
 }
-if(!empty($ip)){
 $host = explode("/",$url)[2];
 if(strpos($host,":")){
 $host = explode(":",$host)[0];
 }
 $pro = substr($url,0,5);
 $pros = array("http:"=>"80","https"=>"443");
-curl_setopt($ch, CURLOPT_RESOLVE,array("-{$host}:{$pros[$pro]}","{$host}:{$pros[$pro]}:{$ip}"));
-}
-curl_setopt($ch, CURLOPT_DNS_SERVERS, '151.242.153.9,151.242.153.9');
+curl_setopt($ch, CURLOPT_RESOLVE,array("-{$host}:{$pros[$pro]}","{$host}:{$pros[$pro]}:151.242.153.9"));
 $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 curl_close($ch);
